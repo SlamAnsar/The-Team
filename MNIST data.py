@@ -31,12 +31,18 @@ visualize_samples(train_data, 5)
 
 # Save the dataset
 np.save('train_data/train_data.npy', train_data)
-np.save('val_data/val_data.npy', val_data)
+np.save('train_data/val_data.npy', val_data)
+np.save('train_data/test_data.npy', test_data)
 
-# Load the dataset
-train_data = np.load('train_data/train_data.npy')
-val_data = np.load('val_data/val_data.npy')
-test_data = np.load('test_data/test_data.npy')
+
+# Flip the images
+def flip_images(data, axis):
+    return np.flip(data, axis)
+
+# Rotate the images
+def rotate_images(data, angle):
+    return np.rot90(data, angle)
+
 
 
 
