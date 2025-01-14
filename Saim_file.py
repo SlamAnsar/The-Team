@@ -1,0 +1,1 @@
+def sppoky(a.c)
